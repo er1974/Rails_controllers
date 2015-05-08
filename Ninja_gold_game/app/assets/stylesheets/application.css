@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+	width: 1120px;
+	color:green;
+}
+h3 {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+	text-align: center;
+}
+#goldCounter {
+	min-width: 130px;
+	text-align: center;
+	background-color: lightgreen;
+	border: 2px solid black;
+	border-radius: 50px;
+	display: inline-block;
+	margin-right: 600px;
+	padding: 15px;
+	font-size: 150%;
+	color: green;
+	font-weight: bold;
+}
+.box {
+	height: 110px;
+	width: 250px;
+	margin: 25px 10px 0 10px;
+	border: 2px solid green;
+	background-color: lightgreen;
+	color: green;
+	border-radius: 60px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+.box:hover{
+box-shadow:7px 7px 7px yellow;
+border: 2px solid red;
+}
+
+.goldButton {
+	border: 2px solid green;
+	border-radius: 60px;
+	background-color: lightblue;
+	box-shadow:3px 3px 3px 4px red;
+}
+
+#activities {
+	height: 200px;
+	border: 2px solid green;
+	background-color:lightgreen;
+	overflow: auto;
+	padding: 0 10px 10px 10px;
+	margin: 0 20px 0 10px;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+p.green {
+	color: green;
+}
+p.red {
+	color: red;
+}
+p.gold {
+	color: #FFD700;
+}
+.refresh {
+	border: 2px solid green;
+	border-radius: 60px;
+	background-color: lightblue;
+	box-shadow:3px 3px 3px 4px red;
+	color: green;
+
+
+}

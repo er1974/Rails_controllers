@@ -1,0 +1,33 @@
+// Place all the styles related to the Number controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+	margin:20px auto;
+	text-align:center;
+	color:green;
+
+}
+
+.red{
+	background-color:red
+}
+.green{
+	background-color:green
+}
+.answer{
+	margin:auto;
+}
+.response{
+	height:100px;
+	width:200px;
+	text-align:center;
+	margin:25px auto;
+	outline: 2px solid black;
+	color: white;
+	padding: 5px 0;
+}
+.submit{
+	background-color:lightgreen;
+	border:2px solid green;
+}

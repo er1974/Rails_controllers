@@ -1,0 +1,13 @@
+<div class="submitted">
+	<p>Thank for submitting the form! You have submitted this form<%=@count%>time(s) now.</p>
+</div>
+<div class="information">
+	<h1>Submitted Information:</h1>
+	<p class="info_left">Name:</p><p class="info_right"><%= @student[:name]%></p>
+	<p class="info_left">Dojo Location:</p><p class="info_right"><%= @student[:location]%></p>
+	<p class="info_left">Favorite Language:</p><p class="info_right"><%= @student[:language]%></p>
+	<p class="info_left">Comment:</p><p class="info_right"><%= @student[:comment]%></p>
+	<a href="/"><button class="button">Go Back</button></a>
+
+	<%= link_to 'Go Back', survey_create_path %>
+</div>

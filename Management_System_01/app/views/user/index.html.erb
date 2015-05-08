@@ -1,0 +1,22 @@
+	<h1>Listing Users</h1>
+	<% if @users %>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.first_name %></td>
+				<td><%= user.last_name %></td>
+				<td><%= user.email_address %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% end %>
+

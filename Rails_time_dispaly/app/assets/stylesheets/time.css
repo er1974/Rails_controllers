@@ -1,0 +1,21 @@
+body{
+	margin:0 auto;
+	text-align:center;
+	width:400px;
+}
+h3{
+	border: 1px solid black;
+	padding: 10px;
+	display:inline-block;
+}
+#datetime{
+	border: 2px solid red;
+	border-radius: 50px;
+	box-shadow:  5px 5px 4px 4px lightgreen;
+}
+h3{
+	color:green;
+	border-radius:40px;
+	box-shadow: 5px 5px red;
+	text-shadow:5px red;
+}

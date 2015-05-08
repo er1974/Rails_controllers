@@ -1,0 +1,20 @@
+<div id="container">
+	<h1 class='login_title'>The Wall</h1>
+
+	<div class='login_wrapper'>
+		<h1>Login</h1>
+
+		<div class='alerts'>
+			<p style='color: green'><%= flash[:success] %></p>
+			<p id='red'><%= flash[:error] %></p>
+		</div>
+
+		<%= simple_form_for :session, url: {action: 'create'} do |f|%>
+			<%= f.input :email, input_html: {placeholder: "Email"}, autofocus: true %>
+			<%= f.input :password, input_html: {placeholder: "Your Password"} %>
+			<%= f.button :submit, value: "Login", class: 'logout' %>
+		<% end %>
+
+		<a href="/register" class='register'>Register</a>
+	</div>
+</div>

@@ -1,0 +1,77 @@
+<div id='wall_wrapper'>
+	<div class='header'>
+		<div class='wall'>
+			<h1>The Wall</h1>
+			<h3>Post a message for all to see</h3>
+		</div>
+		<div id='welcome'>
+			<h3>Welcome, <%= @user.name %> | </h3>
+
+			<%= simple_form_for @user, url: {action: 'destroy', controller: 'sessions'}, method: :delete do |f|%>
+				<%= f.button :submit, value: "Logout", class: "logout" %>
+			<% end %>
+		</div>
+	</div>
+
+	<p class='success'><%= flash[:post_success] %></p>
+	<p class='errors'><%= flash[:post_errors] %></p>
+	<div class='create_post'>
+		<%= simple_form_for @post, url: {action: 'create', controller: 'posts'} do |f|%>
+			<div class='form-group'>
+				<%= f.input :message, label: false, input_html: {class: 'form-control', placeholder: "Post your message"}, autofocus: true %>
+			</div>
+			<div class='form-group'>
+				<%= f.input :user_id, as: :hidden, input_html: {value: @user.id} %>
+			</div>
+
+			<%= f.button :submit, class: 'logout' %>
+		<% end %>
+	</div>
+
+
+	<div class='all_posts'>
+	<h2>All Posts: </h2>
+		<% @posts.reverse.each do |post| %>
+			<div class='post'>
+				<h4><%= User.find(post.user_id).name %> <span> said... </span></h4>
+				<p class='post_content'>"<%= post.message %>"</p>
+				<h5><span>Posted at: </span> <%= post.created_at.to_time.strftime("%l:%m %p") %> <span> on </span> <%= post.created_at.to_time.strftime("%b %e, %Y") %></h5>
+
+				<h5>Comments: </h5>
+				<div class='all_comments'>
+					
+					
+					<% Comment.all.where("post_id = #{post.id}").each do |comment| %>
+						<div class='comment'>
+							<h5><%= User.find(comment.user_id).name%> <span> said... </span></h5>
+							<p>"<%= comment.message %>"</p>
+							<h6><span> at: </span> <%= comment.created_at.to_time.strftime("%l:%m %p") %> <span> on </span> <%= comment.created_at.to_time.strftime("%b %e, %Y") %></h6>
+						</div>
+					<% end %>
+
+					<p class='success'><%= flash[:comment_success] %></p>
+					<p class='errors'><%= flash[:comment_errors] %></p>
+
+					<div class='create_comment'>
+						<%= simple_form_for @comment, url: {action: 'create', controller: 'comments'} do |f|%>
+							<div class='form-group'>
+								<h5>Leave a Comment</h5>
+								<%= f.input :message, label: false, input_html: {class: 'form-control', placeholder: "Comment Here"}, autofocus: true %>
+							</div>
+							<div class='form-group'>
+								<%= f.input :user_id, as: :hidden, input_html: {value: @user.id} %>
+							</div>
+							<div class='form-group'>
+								<%= f.input :msg_id, as: :hidden, input_html: {value: post.id} %>
+							</div>
+
+							<%= f.button :submit, value: "Post Comment", class: 'logout' %>
+						<%end%>
+					</div>
+				</div>
+
+			</div>
+
+		<%end%>
+	</div>
+</div>

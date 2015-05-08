@@ -1,0 +1,21 @@
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - time.css.scss
+
+Backtrace:
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `read'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:360:in `update_stylesheet'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/lib/sass/plugin/compiler.rb:283:in `block in watch'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/polling.rb:56:in `call'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/polling.rb:56:in `poll'
+/Users/yemanenegash/.rvm/gems/ruby-2.1.5/gems/sass-3.2.19/vendor/listen/lib/listen/adapters/polling.rb:32:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - time.css.scss"; }

@@ -1,0 +1,27 @@
+<div id= "welcomes"></div>
+<h1>Welcome to the Great Number Game!</h1>
+<p>I am thinking of a number between 1 and 100</p>
+<p>Take a guess!</p>
+<%if @answer %>
+		<%if @answer =='High' %>
+		<div class="red response">
+			<h1 class="answer">Too high!</h1>
+		</div>
+		<% elsif @answer == 'low'%>
+		<div class="red response">
+			<h1 class="answer">Too Low...</h1>
+		</div>
+		<% else%>
+		<div class="green response">
+			<h1 class="answer"><%=@number%> was the number!</h1>
+			<a href="/"><button>Play Again</button></a>
+		</div>
+		<%end%>
+<%end%>
+<% if @answer != 'correct'%>
+<form action="number/result" method="post">
+	<input name="authenticity_token" value="<%=form_authenticity_token%>" type="hidden">
+	<textarea name="number" ></textarea><br><br>
+	<input class = "submit"type="submit" value="Submit">
+</form>
+<%end%>

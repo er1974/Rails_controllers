@@ -1,0 +1,24 @@
+<% content_for :title do %>
+   Dojo Homepage
+<% end %>
+<% content_for :jquery_code do %>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $('form').submit(function({
+           $.post($(this).attr('action'), $(this).serialize(),function(data){
+                  console.log(data);
+            });
+        return false;
+        });
+    });
+</script>
+<% end %>
+<% content_for :body do %>
+<h1>This is Upgraded Layout Page </h1>
+<form action="/dojo/indexs" method="post">
+       <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+       <input type="text" name="name" placeholder="Name">
+       <input type="text" name="email" placeholder="Email">
+       <input type='submit' value="Submit">
+</form>
+<% end %>

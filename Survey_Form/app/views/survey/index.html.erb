@@ -1,0 +1,28 @@
+<form class= "form" action="survey/check" method="post">
+	<% if @errors
+			@errors.each do |error|%>
+			<p class="red"><%=error%></p>
+		<%end%>
+	<%end%>
+	<input name="authenticity_token" value="<%=form_authenticity_token%>" type = "hidden">
+	<p class="info">Your Name:</p><p class = "info"><input type="text" name="dojo[name]"></p>
+	<p class="info">Dojo Location:</p>
+	<p class="info">
+		<select name="dojo[location]">
+			<option value="Mountian View">Mountain View</option>
+			<option value="Bellevue">Bellevue</option>
+			<option value="New York">New York</option>
+		</select>
+	</p>
+	<p class="info">Favorite Language:</p>
+	<p class="info">
+		<select name="dojo[language]">
+			<option value="Javascript">Javascript</option>
+			<option value="PHP">PHP</option>
+			<option value="Ruby">Ruby</option>
+		</select>
+	</p>
+	<p class="info">Comment(optional)</p>
+	<textarea name="dojo[comment]"></textarea><br><br>
+	<input class= "buttone" type="submit" value="submit">
+</form>
